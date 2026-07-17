@@ -1,0 +1,221 @@
+/* ================= THIẾT LẬP CHUNG ================= */
+html {
+    scroll-behavior: smooth; /* Giúp hiệu ứng cuộn trang mượt mà */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+/* ================= MENU TRÊN CÙNG ================= */
+nav {
+    background: #8b5a2b;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background: #6f4518;
+}
+
+nav ul li a.active {
+    background: #d4af37;
+    color: black;
+}
+
+/* ================= BỐ CỤC CHÍNH ================= */
+.container {
+    display: flex;
+    min-height: 700px;
+}
+
+/* ================= SIDEBAR (MENU BÊN TRÁI) ================= */
+aside {
+    width: 280px;
+    background: white;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+aside h2 {
+    color: #1e3a5f;
+    margin-bottom: 15px;
+}
+
+aside label {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    transition: background 0.3s;
+}
+
+aside label:hover {
+    background: #f0f0f0;
+}
+
+/* ================= LOGIC CHUYỂN TAB (RADIO BUTTONS) ================= */
+/* Ẩn các nút radio mặc định */
+input[type="radio"] {
+    display: none;
+}
+
+/* Làm nổi bật menu bên trái khi tab tương ứng được chọn */
+#intro:checked ~ .container aside label[for="intro"],
+#colo:checked ~ .container aside label[for="colo"],
+#ston:checked ~ .container aside label[for="ston"],
+#parth:checked ~ .container aside label[for="parth"] {
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+}
+
+/* Ẩn tất cả nội dung đi */
+.content {
+    display: none;
+}
+
+/* Hiển thị nội dung tương ứng khi radio được check */
+#intro:checked ~ .container main .intro { display: block; }
+#colo:checked ~ .container main .colo { display: block; }
+#ston:checked ~ .container main .ston { display: block; }
+#parth:checked ~ .container main .parth { display: block; }
+
+/* ================= NỘI DUNG CHÍNH ================= */
+main {
+    flex: 1;
+    background: white;
+    padding: 25px;
+}
+
+main h2 {
+    color: #1e3a5f;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+main h3 {
+    color: #8b5a2b;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+main p {
+    line-height: 1.6;
+}
+
+/* ================= THƯ VIỆN ẢNH (GALLERY) ================= */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.gallery img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer ul {
+    list-style-type: none;
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+footer ul li {
+    margin-bottom: 5px;
+}
+
+/* ================= NÚT LÊN ĐẦU TRANG ================= */
+.back-section {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    background: #222;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.back-section:hover {
+    background: #444;
+}
+
+/* ================= RESPONSIVE ĐIỆN THOẠI ================= */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+}
+.video-box iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    border-radius: 10px;
+}

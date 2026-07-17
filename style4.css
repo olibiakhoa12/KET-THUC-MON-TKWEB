@@ -1,0 +1,213 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* ===== NAV ===== */
+nav {
+    background: #8b5a2b;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #6f4518;
+}
+
+nav ul li a.active {
+    background: #d4af37;
+    color: black;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    display: flex;
+    min-height: 700px;
+}
+
+/* ===== SIDEBAR ===== */
+aside {
+    width: 280px;
+    background: white;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+aside h2 {
+    color: #1e3a5f;
+    margin-bottom: 15px;
+}
+
+/* ===== MENU TRÁI ===== */
+aside label {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+aside label:hover {
+    background: #f0f0f0;
+}
+
+/* ===== MAIN ===== */
+main {
+    flex: 1;
+    background: white;
+    padding: 25px;
+}
+
+/* ===== CONTENT (TAB ẨN/HIỆN) ===== */
+.content {
+    display: none;
+}
+
+/* ===== RADIO HIDE ===== */
+input[type="radio"] {
+    display: none;
+}
+
+/* ===== HIỂN THỊ THEO RADIO ===== */
+#intro:checked ~ .container main .intro { display: block; }
+#liberty:checked ~ .container main .liberty { display: block; }
+#lincoln:checked ~ .container main .lincoln { display: block; }
+#washington:checked ~ .container main .washington { display: block; }
+
+/* ===== ACTIVE MENU ===== */
+#intro:checked ~ .container aside label[for="intro"],
+#liberty:checked ~ .container aside label[for="liberty"],
+#lincoln:checked ~ .container aside label[for="lincoln"],
+#washington:checked ~ .container aside label[for="washington"] {
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* ===== CARD ẢNH ===== */
+figure {
+    text-align: center;
+    width: 380px;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== ẢNH ===== */
+.img-demo {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ===== CHÚ THÍCH ẢNH ===== */
+figcaption {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+footer ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    figure {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+/* ===== KHUNG CHỨA NÚT ===== */
+.video-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* ===== NÚT LÊN ĐẦU TRANG ===== */
+.back-section {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    background: #222;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.back-section:hover {
+    background: #444;
+}
